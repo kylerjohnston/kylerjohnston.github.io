@@ -120,7 +120,7 @@ a.nav,a.name_nav {
 
 a.name_nav:hover {
   font-weight: 400;
-  color: #333;
+  color: #1b85b8;
 }
 
 a.nav:hover {
@@ -153,6 +153,10 @@ h1,h2,h3 {
   margin: 0px 0px 5px 0px;
 }
 
+article h1::first-letter {
+  color: #ae5a41;
+}
+
 h1.name {
   display: inline;
   font-family: Roboto;
@@ -166,7 +170,7 @@ body {
   font-weight: 300;
   line-height: 1.5;
   font-family: Roboto;
-  background-color: #fdfdfd;
+  background-color: #faf8f8;
   color: #333;
 }
 
@@ -303,7 +307,7 @@ table {
 
 th {
   background-color: #5a5255;
-  color: #fdfdfd;
+  color: #faf8f8;
   font-weight: 400;
   text-align: center;
   padding: 10px;
@@ -318,7 +322,7 @@ tr:nth-child(even) {
 }
 
 tr.invisible {
-  background-color: #fdfdfd;
+  background-color: #faf8f8;
 }
 
 img {
@@ -362,3 +366,4 @@ pre {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
 }
+
