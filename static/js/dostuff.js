@@ -11,7 +11,7 @@ $(function(){
     if ($(this).prop("href") == window.location.href) {
       $(this).addClass("selected");
     }
-    else if ($(this).prop("href") == "/" && window.location.href == "/index.html") {
+    else if ($(this).prop("href") == "/index.html" && window.location.href == "/") {
       $(this).addClass("selected");
     };
   });
