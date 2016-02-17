@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/pygments.css">
     <!--<link rel="stylesheet" href="/static/css/font-awesome-4.5.0/css/font-awesome.min.css">-->
     
-    <link rel="stylesheet" href="/static/gen/packed.css?c72e5458">
+    <link rel="stylesheet" href="/static/gen/packed.css?28c54691">
     
     <link rel="apple-touch-icon" sizes="57x57" href="/static/img/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/static/img/apple-touch-icon-60x60.png">
@@ -63,6 +63,113 @@
       </div>
       
   <section>
+    
+      <article>
+        <h1 class="heading"><a href="/posts/the-pleasure-of-the-txt/" class="post_title">The pleasure of the TXT: Writing in plain text in the humanities</a></h1>
+        <small class="heading">
+          16 February 2016
+          <ul class="tags">
+            
+            <li class="tags"><a class="tags" href="/tags/humanities/">#humanities</a></li>
+            
+            <li class="tags"><a class="tags" href="/tags/writing/">#writing</a></li>
+            
+            <li class="tags"><a class="tags" href="/tags/vim/">#vim</a></li>
+            
+          </ul>
+        </small>
+        <small class="heading"><i class="fa fa-comment"></i> <a href="/posts/the-pleasure-of-the-txt/#disqus_thread" class="comment" data-disqus-identifier="the-pleasure-of-the-txt">Comments</a></small>
+        <p>Microsoft Word is the de facto standard application for writing in the humanities. We write, collaborate, and disseminate our works in <code>.docx</code> format. There are lots of things I dislike about Word: its lack of portability, for one, and how it forces you to be tied into the Microsoft ecosystem, or how easily the formatting of an entire document can get messed up by dropping in a single figure or table. The biggest problem with Word, though, is that it just doesn’t match up with the way we write. Writing and typesetting are different, distinct parts of the writing process, but in Word they are combined into one task. As we write we must also always be formatting, thinking not just about our words but about how they will appear on the paper. We fiddle with fonts and line spacing and ligatures when we should be getting down words.</p>
+<p>This is a really <em>weird</em> writing ecosystem. For years our colleagues on the opposite side of campus&mdash;the scientists and the engineers and the mathematicians&mdash;have been typesetting their papers using a free program called <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a>. LaTeX is a markup language&mdash;like HTML&mdash;that lets you write your papers in plain text files that you can edit with any text editor. Then, when you’re done writing, you can typeset document using any number of nice-looking templates that you can proofread and send off to review in any number of formats. This makes it really easy to quickly produce differently formatted versions of your paper: a version to turn into your seminar professor, a version to submit to journals, a version to post on your blog, whatever.</p>
+<p>LaTeX is overkill for most of what we write in the humanities. LaTeX is great if you want to typset complex-looking mathematical equations&mdash;that’s why  STEM people love it&mdash;but its syntax is overly complex for the kinds of things we typically write in the humanities. Instead, we can draw on LaTeX&rsquo;s write first, format later model but write in the simpler <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a> markup language. Even if you’ve never heard the term “Markdown,” you probably recognize its syntax from emails or internet message board posts: a word or phrase wrapped in <code>*single asterisks*</code> is <em>italicized</em>; <code>**double asterisks**</code> make text <strong>bold</strong>. You can find a more detailed guide to the syntax elsewhere, but realistically you probably won’t be using too much beyond what I just demonstrated in your humanities papers.</p>
+<h2>How I write</h2>
+<p>For the rest of this post, I’m going to describe my particular set up for writing in the humanities. I write <em>everything</em> in Markdown&mdash;from seminar papers and syllabi to lesson plans, notes, and this blog post&mdash;and rely on the powerful <a href="http://pandoc.org">Pandoc</a> utility to convert my Markdown files into formatted documents&mdash;mostly PDFs and HTML files.</p>
+<h3>Prerequisites</h3>
+<p>I write on a mid-2012 Macbook Pro. My instructions below are specific to OS X, but all of the tools I mention are cross-platform and a similar set up could be configured on any system. You&rsquo;ll need the following things:</p>
+<ul>
+<li>
+<p><strong>A plain text editor</strong>. This can be something as simple as TextEdit on a Mac or Notepad on Windows. There are also, at least for OS X, several editors made specifically for editing markdown and targeted at writers, such as ByWord, iA Writer, and WriteRoom. If you don’t write code, these might be your best bets&mdash;I’ve had good results with ByWord in the past. More advanced options like Atom, Sublime Text, Emacs, and Vim will be more customizable and support advanced features like syntax highlighting and autocompletion.  I use Vim and MacVim because I&rsquo;ve invested time learning to use them but you should feel free to try out several editors&mdash;Vim has a steep (but rewarding!) learning curve, and you should use whatever editor works best for you.</p>
+</li>
+<li>
+<p><strong>Pandoc</strong>. <a href="http://pandoc.org">Pandoc</a> is a utility that can convert Markdown documents to basically any other format you want. </p>
+</li>
+<li>
+<p><strong>A LaTeX installation</strong>. Pandoc needs a LaTeX installation to convert your files to PDFs. If you’re on OS X, <a href="http://tug.org/mactex/">MacTeX</a> is what you want. The BasicTex package will suffice, but I’d recommend installing the <a href="http://amaxwell.github.io/tlutility/">TeX Live Utility</a> too if you go that route (it’s included with the full MacTeX package). After installing your TeX package, open the TeX Live Utility and update all packages.</p>
+</li>
+<li>
+<p><strong>My MLA Pandoc templates</strong>. Pandoc still isn’t that popular of a tool in the humanities. I couldn’t find any MLA templates for Pandoc, so I made my own. They rely on the <a href="https://www.ctan.org/pkg/mla-paper">mla-paper</a> LaTeX package which comes with MacTeX. You can <a href="https://github.com/kylerjohnston/pandoc-templates">download them from Github</a>.</p>
+</li>
+<li>
+<p><strong>An MLA Citation Style Language file</strong>. Pandoc uses this file to generate your citations. <a href="https://www.zotero.org/styles/modern-language-association">Here&rsquo;s a link to the MLA 7th Edition CSL file from the Zotero Style Repository</a>. Save this file to <code>~/.csl/modern-language-association.csl</code>. That&rsquo;s where Pandoc will look for it.</p>
+</li>
+<li>
+<p><strong>A citation manager</strong>. Zotero, Mendeley, and EndNote seem to be the most popular. I use BibDesk&mdash;it comes with a full MacTeX install and it’s lightweight and easy to use.</p>
+</li>
+</ul>
+<h3>Putting it all together</h3>
+<p>Let’s imagine I’m writing a paper for an English graduate seminar. I start out by making a new directory for the project. </p>
+<div class="codehilite"><pre>miltons-mistake/
+</pre></div>
+
+
+<p>I compile a bibliography for the project in BibTex and export it to the root of the project directory as a <code>.bib</code> file. You could also do this in Mendeley or Zotero.</p>
+<div class="codehilite"><pre>miltons-mistake/
+    miltons-mistake.bib
+</pre></div>
+
+
+<p>I make a <code>drafts/</code> directory and put my master Markdown file in it.</p>
+<div class="codehilite"><pre>miltons-mistake/
+    drafts/
+        miltons-mistake.md
+    miltons-mistake.bib
+</pre></div>
+
+
+<p><code>miltons-mistake.md</code> looks like this:</p>
+<div class="codehilite"><pre>---
+auth:
+  first: Kyle
+  last: Johnston
+professor: Professor Smith
+course: English 598
+date: February 16, 2016
+title: &quot;Milton&#39;s Mistake&quot;
+bibliography: miltons-mistake.bib
+csl: modern-language-association.csl
+---
+
+This is the body of your paper. You can cite stuff by referencing the citation ID in your bib file, like so [@milton-Paradise 1.102].
+
+New paragraphs are separated by a blank line.
+
+At the end of your paper, type the following to generate a Works Cited page from your bibliography using only sources you&#39;ve cited in the paper.
+
+\workscited
+</pre></div>
+
+
+<p>The metadata at the beginning of the file gives the template the necessary info to set up your document and tells Pandoc where to find your bibliography and what citation style to use.</p>
+<p>I compile my formatted documents to another subdirectory, <code>out/</code>. Open a terminal, change to the project&rsquo;s root directory, and run:</p>
+<div class="codehilite"><pre><span class="nv">$ </span>pandoc drafts/miltons-mistakes.md -o out/miltons-mistakes-seminar-02-16-16.pdf --latex-engine<span class="o">=</span>xelatex --template<span class="o">=</span>mla --filter pandoc-citeproc
+</pre></div>
+
+
+<p>The <code>-o out/miltons-mistake-seminar-02-16-16.pdf</code> flag tells Pandoc where to write the compiled document. <code>--latex-engine=xelatex</code> tells Pandoc to use XeLaTeX to compile the document. XeLaTeX ships with MacTeX&mdash;it has the advantage of being able to use your system fonts, something other LaTeX engines tend not to play nicely with. <code>--template=mla</code> tells Pandoc to use your MLA template. And finally <code>--filter pandoc-citeproc</code> will let Pandoc process your citations by passing them to its <code>pandoc-citeproc</code> tool.</p>
+<p>Since this command is so long I usually save it to a build script that I can quickly run whenever I want to compile the document.</p>
+<div class="codehilite"><pre><span class="c">#!/bin/bash</span>
+
+pandoc drafts/miltons-mistakes.md <span class="se">\</span>
+  -o out/miltons-mistakes-seminar-02-16-16.pdf <span class="se">\</span>
+  --latex-engine<span class="o">=</span>xelatex <span class="se">\</span>
+  --template<span class="o">=</span>mla <span class="se">\</span>
+  --filter pandoc-citeproc
+</pre></div>
+
+
+<p>Save this in the project&rsquo;s root directory as <code>build.sh</code> and then you just run <code>$ ./build.sh</code> to compile your document.</p>
+<p>That&rsquo;s it! The advantage of this approach is two-fold: you don&rsquo;t have to worry about formatting while you&rsquo;re writing, and once you have your document written it&rsquo;s simple to format it in any number of ways. I could export an MLA-style PDF for my professor, another PDF with a different citation style to submit to a journal, and an HTML file for my blog all from the same source document.</p>
+      </article>
     
       <article>
         <h1 class="heading"><a href="/posts/what-makes-a-bestseller/" class="post_title">What makes a bestseller? Modeling literary prestige in the 19th and 20th centuries</a></h1>
