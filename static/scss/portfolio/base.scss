@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:200,400);
+
+$one: #f1efe2;
+$one-active: #fdfdfc;
+$two: #9ABA93;
+$two-active: #8aa784;
+$three: #84A9C0;
+$three-active: #698799;
+$four: #6A66A3;
+$five: #2D2864;
+
+$mainfont: 'Work Sans', Helvetica, sans-serif;
+
+@mixin transition($element, $delay) {
+  -webkit-transition: $element $delay ease;
+  -moz-transition: $element $delay ease;
+  -ms-transition: $element .25s ease;
+  -o-transition: $element $delay ease;
+  transition: $element $delay ease;
+}
+
+@mixin background-gradient($color1, $color2) {
+  background-color: $color1;
+  background: -webkit-linear-gradient(left top, $color1, $color2);
+  background: -o-linear-gradient(left top, $color1, $color2);
+  background: -moz-linear-gradient(left top, $color1, $color2);
+  background: linear-gradient(left top, $color1, $color2);
+}
+
+@mixin project-link($color) {
+  color: $color;
+  text-decoration: none;
+  border-bottom: 1px solid $color;
+  @include transition(all, 0.25s);
+}
+
+@import 'layout';
+@import 'typography';
+@import 'window';

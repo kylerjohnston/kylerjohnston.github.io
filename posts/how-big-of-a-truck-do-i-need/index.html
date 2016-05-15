@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Kyle R. Johnston - How big of a truck will I need to move all my stuff?</title>
+    
+<meta name="description" content="">
+
+    <link rel="stylesheet" href="/pygments.css">
+    
+    <link rel="stylesheet" href="/static/gen/packed.css?c89bfbf3">
+    
+    <link rel="apple-touch-icon" sizes="57x57" href="/static/img/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/static/img/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/static/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/static/img/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/static/img/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/static/img/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/static/img/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/static/img/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/static/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/static/img/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/static/img/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/static/img/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/static/img/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/static/img/manifest.json">
+    <link rel="mask-icon" href="/static/img/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/static/img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/static/img/mstile-144x144.png">
+    <meta name="msapplication-config" content="/static/img/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff"> 
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_left">
+          <a href="/blog/" class="name_nav">KYLE R. JOHNSTON</a>
+        </div>
+        <div class="header_right">
+          <ul class="nav">
+            <li class="nav"><a href="/blog/" class="nav" id="nav">Blog</a></li>
+            <li class="nav"><a href="/archive/" class="nav" id="nav">Archive</a></li>
+            <li class="nav"><a href="/about/" class="nav" id="nav">About</a></li>
+            <li class="nav"><a href="/" class="nav" id="nav">Portfolio</a></li>
+            <li class="nav"><a href="/recent.atom" class="atom" id="nav"><i class="fa fa-rss-square"></i></a></li>
+          </ul>
+        </div>
+        <div class="menu">
+          <ul class="nav">
+            <li class="nav"><a href="/blog/" class="nav" id="nav">Blog</a></li>
+            <li class="nav"><a href="/archive/" class="nav" id="nav">Archive</a></li>
+            <li class="nav"><a href="/about/" class="nav" id="nav">About</a></li>
+            <li class="nav"><a href="/" class="nav" id="nav">Portfolio</a></li>
+            <li class="nav"><a href="/recent.atom" class="nav" id="nav"><i class="fa fa-rss-square"></i> Atom Feed</a></li>
+          </ul>
+        </div>
+        <div class="menu-button">
+          <button id="menu-open"><i class="fa fa-bars"></i></button>
+        </div>
+      </div>
+      
+  <section>
+    <article>
+      <h1 class="heading">How big of a truck will I need to move all my stuff?</h1>
+      <small class="heading">
+        11 April 2016
+        <ul class="tags">
+          
+            <li class="tags"><a class="tags" href="/tags/javascript/">#javascript</a></li>
+          
+        </ul>
+      </small>
+      <p>In a couple months I&rsquo;m going to finish my Master&rsquo;s degree, and then I&rsquo;m going to be moving cross-country. I&rsquo;ve accumulated a lot of <em>stuff</em> over the years. I&rsquo;ve been trying to get rid of a lot of it lately&mdash;selling off <a href="https://www.discogs.com/seller/RoddyPowers/profile">my records</a> and my books and furniture I&rsquo;m not going to need&mdash;but there&rsquo;s still enough stuff that I&rsquo;m going to have to rent a truck to make the move.</p>
+<p>The question is how big of a truck I&rsquo;m going to need. Penske has a 12 ft.-truck with <code>450 cu. ft.</code> of loading space and a 16 ft.-truck with <code>800 cu. ft.</code> of loading space for the same price. Before I reserve a truck, I want to get a sense of how much stuff I&rsquo;m actually moving: though they&rsquo;re both the same price, I&rsquo;d rather drive the smaller truck cross-country if it&rsquo;s possible.</p>
+<p>So I opened up Google Docs, got out a tape measure, and made a spreadsheet of the dimensions of all of the things I might want to move them. You can see the complete spreadsheet as a CSV file <a href="/static/data/moving_data.csv">here</a>. Geometry was never my strongest subject, but this seems like a problem easy enough to get a handle on with some simple code.</p>
+<p>I read the CSV file into a Javascript object and wrote some quick functions to calculate the cubic footage of each item and sum a specific property in an array of objects.</p>
+<div class="codehilite"><pre><span class="kd">function</span> <span class="nx">parseFields</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="nx">i</span><span class="p">.</span><span class="nx">Thing</span><span class="p">,</span>
+      <span class="nx">height</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Height</span><span class="p">),</span>
+      <span class="nx">length</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Length</span><span class="p">),</span>
+      <span class="nx">width</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Width</span><span class="p">),</span>
+      <span class="nx">cubicFeet</span><span class="o">:</span> <span class="nx">cuInToCuFt</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Height</span> <span class="o">*</span> <span class="nx">i</span><span class="p">.</span><span class="nx">Width</span> <span class="o">*</span> <span class="nx">i</span><span class="p">.</span><span class="nx">Length</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">cuInToCuFt</span><span class="p">(</span><span class="nx">cuIn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">cuIn</span> <span class="o">/</span> <span class="mi">1728</span><span class="p">);</span> <span class="c1">// Round up; be conservative in our estimation</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">sumProperty</span><span class="p">(</span><span class="nx">prop</span><span class="p">,</span> <span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">reduce</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">[</span><span class="nx">prop</span><span class="p">];</span>
+  <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>It turns out I have <code>370 cubic feet</code> of stuff. That&rsquo;s good! Volume-wise, it can all fit in the smaller 12 ft.-truck.</p>
+<p>I probably won&rsquo;t be able to (and certainly won&rsquo;t want to) stack everything floor-to-ceiling in the truck, so it&rsquo;s a good idea to see what the total footprint of all of this stuff is too. The 12 ft.-truck has interior dimensions of <code>12 ft. X 6 ft. 6 in. X 6 ft. 1 in.</code> That makes for about <code>78 sq. ft.</code> of floor space. The 16 ft.-truck, at <code>16 ft. X 7 ft. 7 in. X 6 ft. 6 in.</code> has about <code>121 sq. ft.</code> of floor space.</p>
+<p>I edited my map function above to calculate the square footage of all the things too.</p>
+<div class="codehilite"><pre><span class="kd">function</span> <span class="nx">parseFields</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">id</span><span class="o">:</span> <span class="nx">i</span><span class="p">.</span><span class="nx">Thing</span><span class="p">,</span>
+      <span class="nx">height</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Height</span><span class="p">),</span>
+      <span class="nx">length</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Length</span><span class="p">),</span>
+      <span class="nx">width</span><span class="o">:</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Width</span><span class="p">),</span>
+      <span class="nx">cubicFeet</span><span class="o">:</span> <span class="nx">cuInToCuFt</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Height</span> <span class="o">*</span> <span class="nx">i</span><span class="p">.</span><span class="nx">Width</span> <span class="o">*</span> <span class="nx">i</span><span class="p">.</span><span class="nx">Length</span><span class="p">),</span>
+<span class="hll">      <span class="nx">squareFeet</span><span class="o">:</span> <span class="nx">sqInToSqFt</span><span class="p">(</span><span class="nx">i</span><span class="p">.</span><span class="nx">Width</span> <span class="o">*</span> <span class="nx">i</span><span class="p">.</span><span class="nx">Length</span><span class="p">)</span>
+</span>    <span class="p">}</span>
+  <span class="p">});</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">sqInToSqFt</span><span class="p">(</span><span class="nx">sqIn</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nx">sqIn</span> <span class="o">/</span> <span class="mi">144</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>If we sum that, we find our stuff has a footprint, spread in a single layer, of about <code>182 sq. ft.</code></p>
+<p>This is obviously an overestimation of the amount of floor space stuff will take up in the truck. I calculate floor space as <code>width * length</code>, but some of the items (mattress and box spring, for example) will be stood on end during transit, taking up a lot less space; my function also rounds up to the next square foot. Still, as a conservative estimate this works&mdash;better to end up with a truck that&rsquo;s a little too big than one that&rsquo;s a little too small.</p>
+<p>Based on this I think I&rsquo;m going to reserve the 16 ft.-truck. It is going to be a little more cumbersome to drive and use a bit more fuel, but it will be easier to load and I won&rsquo;t have to stack things as much and risk things falling in transit.</p>
+    </article>
+    <article>
+      <div id="disqus_thread"></div>
+    </article>
+  </section>
+  <script>
+     var disqus_config = function () {
+       this.page.url = "http://kylerjohnston.com/posts/how-big-of-a-truck-do-i-need/";
+       this.page.identifier = "how-big-of-a-truck-do-i-need"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kylerjohnston.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+
+      <footer>
+        <p class="footer">Built with <i class="fa fa-heart red"></i> using Python and Flask. <a href="http://github.com/kylerjohnston/another-static-flask-blog">View the source code on Github</a>.</p>
+        <p class="footer">All content copyright <i class="fa fa-copyright"></i> 2015&ndash;<span id="current-year"></span> Kyle Johnston and released under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+      </footer>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="/static/gen/packed.js?ddd01365"></script>
+    
+    
+<script id="dsq-count-scr" src="//kylerjohnston.disqus.com/count.js" async></script>
+
+  </body>
+</html>

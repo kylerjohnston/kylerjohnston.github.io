@@ -88,7 +88,10 @@ a.atom:hover {
 }
 
 a.name_nav:hover, a.nav:hover {
-  font-weight: 400;
+  font-weight: 300;
+}
+
+a.nav:hover {
   color: $light-blue;
 }
 
@@ -215,10 +218,10 @@ code {
 }
 
 pre {
-  white-space: pre-wrap;
   font-family: $monospace-font;
   font-weight: 400;
   padding: 10px;
+  overflow-x: scroll;
 }
 
 /* Blockquotes ***************************************************************/
