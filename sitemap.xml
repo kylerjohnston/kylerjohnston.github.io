@@ -2,122 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/404.html</loc>
+      <loc>http://kylerjohnston.com/404.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/index.html</loc>
+      <loc>http://kylerjohnston.com/index.html</loc>
       <lastmod>2016-05-28</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/about/index.html</loc>
+      <loc>http://kylerjohnston.com/about/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/archive/index.html</loc>
+      <loc>http://kylerjohnston.com/archive/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/blog/index.html</loc>
+      <loc>http://kylerjohnston.com/blog/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/pages/1/index.html</loc>
+      <loc>http://kylerjohnston.com/pages/1/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/pages/2/index.html</loc>
+      <loc>http://kylerjohnston.com/pages/2/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/posts/how-big-of-a-truck-do-i-need/index.html</loc>
+      <loc>http://kylerjohnston.com/posts/how-big-of-a-truck-do-i-need/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/posts/introducing-todayiread/index.html</loc>
+      <loc>http://kylerjohnston.com/posts/introducing-todayiread/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/posts/reading-january-2016/index.html</loc>
+      <loc>http://kylerjohnston.com/posts/reading-january-2016/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/posts/sitting-down-to-reflect-on-making-some-ballads-again/index.html</loc>
+      <loc>http://kylerjohnston.com/posts/sitting-down-to-reflect-on-making-some-ballads-again/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/posts/the-pleasure-of-the-txt/index.html</loc>
+      <loc>http://kylerjohnston.com/posts/the-pleasure-of-the-txt/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/posts/what-makes-a-bestseller/index.html</loc>
+      <loc>http://kylerjohnston.com/posts/what-makes-a-bestseller/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/humanities/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/humanities/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/javascript/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/javascript/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/literary-studies/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/literary-studies/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/markov-chains/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/markov-chains/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/projects/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/projects/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/reading/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/reading/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/shakespeare/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/shakespeare/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/text-mining/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/text-mining/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/webdev/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/webdev/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
     <url>
-      <loc>/Users/kyle/Code/flask-blog/app/build/tags/writing/index.html</loc>
+      <loc>http://kylerjohnston.com/tags/writing/index.html</loc>
       <lastmod>2016-06-10</lastmod>
     </url>
     
