@@ -4,21 +4,33 @@ if(typeof jQuery === 'undefined') {
 };
 
 /* Highlight current page in nav menu */
-$(function(){
-  $("a#nav").each(function(){
-    if ($(this).prop("href") == window.location.href || $(this).prop("href") == window.location.href + 'index.html') {
-      $(this).addClass("selected");
-    }
-  });
-});
+(function highlightCurrentPage() {
+  var nav = document.getElementsByClassName('nav');
+  for (var i = 0; i < nav.length; i++) {
+    if (nav[i].href == window.location.href) {
+      nav[i].className += ' selected';
+    };
+  }
+})();
 
-// Mobile nav menu
-$(function() {
-  $(".menu").hide();
-  $("#menu-open").click(function() {
-    $(".menu").toggle();
+/* Hide/show mobile nav menu */
+(function hideShowMobileNav() {
+  var menu = document.getElementsByClassName('menu');
+  var menuOpen = document.getElementById('menu-open');
+  var menuClose = document.getElementById('menu-close');
+  menuClose.style.display = 'none';
+  menu[0].style.display = 'none';
+  menuOpen.addEventListener('click', function(event) {
+    menu[0].style.display = 'block';
+    menuClose.style.display = 'block';
+    menuOpen.style.display = 'none';
   });
-});
+  menuClose.addEventListener('click', function(event) {
+    menu[0].style.display = 'none';
+    menuClose.style.display = 'none';
+    menuOpen.style.display = 'block';
+  });
+})();
 
 // Add captions to images
 // Adapted from this stackoverflow post:
