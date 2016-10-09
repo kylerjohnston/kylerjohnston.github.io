@@ -50,6 +50,62 @@
   <section>
     
       <article>
+        <h1 class="heading"><a href="/posts/do-i-go-to-the-grocery-store-too-much/" class="post_title">A story about shopping for groceries</a></h1>
+        <small class="heading">
+          9 October 2016
+          <ul class="tags">
+            
+            <li class="tags"><a class="tags" href="/tags/hannaford/">#hannaford</a></li>
+            
+          </ul>
+        </small>
+        <small class="heading"><i class="fa fa-comment"></i> <a href="/posts/do-i-go-to-the-grocery-store-too-much/#disqus_thread" class="comment" data-disqus-identifier="do-i-go-to-the-grocery-store-too-much">Comments</a></small>
+        <p>When I was growing up in the beatific suburbs of Connecticut, my mother would make weekly trips on Sunday to the Big Y and, occasionally, to Costco. Sometimes I would go with her. These were my introductions to grocery shopping. It rarely seemed to work well. My mother&rsquo;s work took her out of town three, sometimes four nights a week. Sundays she would cook dinner; the rest of the week my step-dad and I would eat leftovers, make frozen pizza, or go to Friendly&rsquo;s. When the next weekend came around, my mother would throw out all the rotten produce and moldy bread she&rsquo;d bought the prior week before heading out for another trip to the Big Y.</p>
+<p>It seemed wasteful. I was in high school when Michael Pollan&rsquo;s <em>Omnivore&rsquo;s Dilemma</em> and <em>In Defense of Food</em> came out. I didn&rsquo;t read them nor was I aware of them, as far as I remember, but I watched <em>Food Inc.</em> and Anthony Bourdain and started to really appreciate the importance of food. I wanted to learn cook. I found recipes on the internet and tutorials on YouTube and I would go to the grocery store&mdash;Stop N Shop now, because it was closer than Big Y&mdash;with lists of all the ingredients I needed to make a single a meal. I&rsquo;d come home and make much more than I could ever eat. I cooked based on recipes. I didn&rsquo;t know how to plan meals around the ingredients I already had, so the coconut milk or the half can of chopped tomatoes I bought would be spoiled by the time I ever wanted to use it again&mdash;<em>if</em> I ever wanted to use it again.</p>
+<p>My first semester of college I lived in a dorm and ate a lot of fast food and peanut butter sandwiches. After that semester I started commuting to school. I had a kitchen, and I drove by three grocery stores on the way to and from school. I was better at cooking by this point. I had meals I regularly cooked. I knew how to make things based on the ingredients I had on hand. But I was living alone, and I was a skinny kid (I still am). I wanted to cook with fresh produce, but fresh food spoils. If I went grocery shopping once a week, my produce would go bad before I could eat it all. So I started going to the grocery store every other day and buying just the produce and the protein I would need for the next day or two. It was a system that worked for me. The grocery store was on my way home, I was using fresh produce, and nothing was being wasted.</p>
+<p>Two and a half years ago my girlfriend moved in with me. My grocery shopping habits perplexed her. Why are you going to the grocery store, she would ask me, when you just went two days ago? She was from a once-a-week-shopper family. I kept shopping, but I wondered if, maybe, it wasn&rsquo;t the most efficient system. Maybe I go to the grocery store too much.</p>
+<h2>Figuring out how often I really go to the store</h2>
+<p>For a little over a year, I&rsquo;ve been keeping meticulous records of all of my spending which allows me to see exactly when, where, and how much I&rsquo;m spending on groceries.</p>
+<p><img alt="Figure 1. Grocery purchases, 17 July 2015&amp;ndash;7 October 2016." src="/static/img/posts/grocery_purchases.png" /></p>
+<p>I&rsquo;ve taken 167 grocery trips between 17 July 2015 and 7 October 2016. 167 trips in 448 days makes for a rough average of one grocery trip every 2.6826347 days, or about every 2 days, 16 hours, and 23 minutes. For a little more accuracy, I wrote a quick Python function to calculate the average number of days between trips.</p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+
+<span class="k">def</span> <span class="nf">avg_day_difference</span><span class="p">(</span><span class="n">grocery_trips</span><span class="p">):</span>
+  <span class="c"># Make a list of just the dates of the grocery trips</span>
+  <span class="n">dates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">&#39;Date&#39;</span><span class="p">],</span> 
+    <span class="s">&#39;%m/</span><span class="si">%d</span><span class="s">/%Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> <span class="n">grocery_trips</span><span class="p">))</span>
+
+  <span class="c"># Sort it in reverse chronological order, most recent date first</span>
+  <span class="n">dates</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+  <span class="c"># Make a list of the time differences between each transaction</span>
+  <span class="n">day_differences</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="n">day_differences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+
+  <span class="c"># Return the mean</span>
+  <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">day_differences</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">day_differences</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The slightly more accurate calculation shows I make a grocery trip, on average, every 2 days, 16 hours, and 46 minutes.</p>
+<p>Not all of these trips are necessarily for produce or food, though. In my budget, I categorize as &ldquo;grocery&rdquo; any spending on consumable household stuff. That includes food, but it also includes things like toilet paper and paper towels, cleaning supplies, and bathroom supplies like toothpaste, soap, shampoo, etc. I also include alcohol in my grocery budget. In the plot below, I&rsquo;ve included only conventional &ldquo;grocery stores.&rdquo;</p>
+<p><img alt="Figure 2. Purchases from grocery stores,  17 July 2015&amp;ndash;7 October 2016." src="/static/img/posts/grocery_store_purchases.png" /></p>
+<p>I&rsquo;ve gone on 158 trips to grocery stores, averaging 2 days, 20 hours, and 29 minutes between trips. So I go every two or three days. Which is about what I thought.</p>
+<h2>Is this too much?</h2>
+<p>According to the Food Marketing Institute, &ldquo;the trade association that serves as the voice of food retail,&rdquo; the average U.S. consumer made 1.6 trips to the supermarket per week in 2016.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> So I&rsquo;m going to the store more than the average consumer. Is that a bad thing? I&rsquo;m not sure. It seems like it&rsquo;s working to me.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="http://www.fmi.org/docs/default-source/webinars/fmi-2016-us-grocery-shopper-trends-overview-webinar5ce7030324aa67249237ff0000c12749.pdf?sfvrsn=2">&ldquo;U.S. Grocery Shopping Trends, 2016.&rdquo; Food Marketing Institute. Hartman Group. 2016.</a> (pdf link)&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+      </article>
+    
+      <article>
         <h1 class="heading"><a href="/posts/how-big-of-a-truck-do-i-need/" class="post_title">How big of a truck will I need to move all my stuff?</a></h1>
         <small class="heading">
           11 April 2016
@@ -293,31 +349,6 @@ Leavis, Q. D. <em>Fiction and the Reading Public</em>. 1935. New York: Russell &
 </li>
 </ol>
 </div>
-      </article>
-    
-      <article>
-        <h1 class="heading"><a href="/posts/reading-january-2016/" class="post_title">What I’m reading: January 2016</a></h1>
-        <small class="heading">
-          31 January 2016
-          <ul class="tags">
-            
-            <li class="tags"><a class="tags" href="/tags/reading/">#reading</a></li>
-            
-          </ul>
-        </small>
-        <small class="heading"><i class="fa fa-comment"></i> <a href="/posts/reading-january-2016/#disqus_thread" class="comment" data-disqus-identifier="reading-january-2016">Comments</a></small>
-        <p>I do a lot of reading. I like to be able to keep track of it all in some way. I used to use Goodreads, but I don’t really care about the social media-y aspects of the site and it just feels overkill for what I want to do. So here&rsquo;s a plain, simple list of stuff I&rsquo;ve been reading lately. I’d like to make this a habit to keep track of my reading progress&mdash;compiling monthly reading lists. This one is short because I just had the idea last week, but hopefully I keep it up.</p>
-<p>The spring semester has just started and I’m taking two seminars: one on eighteenth-century British drama, and one on modernism. So most of my reading has to do with one of those two things.</p>
-<p>Here’s what I’ve been reading in January, or at least the week of the month:</p>
-<ul>
-<li>Mary Helen McMurran. “The New Cosmpolitanism and the Eighteenth Century.” 1/25</li>
-<li>Christopher J. Wheately. “Tragedy” in <em>The Cambridge Companion to English Restoration Theatre</em>. 1/26</li>
-<li>Derek Hughes. “Restoration and Settlement: 1660 and 1688” in <em>The Cambridge Companion to English Restoration Theatre</em>. 1/27</li>
-<li>Marshall Berman. “Introduction” from <em>All That Is Solid Melts Into Air</em>. 1/27</li>
-<li>Marshall Berman. “II. All That Is Solid Melts Into Air: Marx, Modernism and Modernization” in <em>All That Is Solid Melts Into Air</em>. 1/28</li>
-<li>Edgar Allen Poe. “The Man of the Streets.” 1/28</li>
-<li>Herman Melville. “Bartleby the Scrivener.” 1/29</li>
-</ul>
       </article>
     
   </section>

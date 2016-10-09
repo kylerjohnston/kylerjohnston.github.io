@@ -8,7 +8,7 @@
     
     <url>
       <loc>http://kylerjohnston.com/index.html</loc>
-      <lastmod>2016-06-26</lastmod>
+      <lastmod>2016-10-09</lastmod>
     </url>
     
     <url>
@@ -18,22 +18,27 @@
     
     <url>
       <loc>http://kylerjohnston.com/archive/index.html</loc>
-      <lastmod>2016-06-26</lastmod>
+      <lastmod>2016-10-09</lastmod>
     </url>
     
     <url>
       <loc>http://kylerjohnston.com/blog/index.html</loc>
-      <lastmod>2016-06-26</lastmod>
+      <lastmod>2016-10-09</lastmod>
     </url>
     
     <url>
       <loc>http://kylerjohnston.com/pages/1/index.html</loc>
-      <lastmod>2016-06-26</lastmod>
+      <lastmod>2016-10-09</lastmod>
     </url>
     
     <url>
       <loc>http://kylerjohnston.com/pages/2/index.html</loc>
-      <lastmod>2016-06-26</lastmod>
+      <lastmod>2016-10-09</lastmod>
+    </url>
+    
+    <url>
+      <loc>http://kylerjohnston.com/posts/do-i-go-to-the-grocery-store-too-much/index.html</loc>
+      <lastmod>2016-10-09</lastmod>
     </url>
     
     <url>
@@ -68,7 +73,12 @@
     
     <url>
       <loc>http://kylerjohnston.com/tags/index.html</loc>
-      <lastmod>2016-06-26</lastmod>
+      <lastmod>2016-10-09</lastmod>
+    </url>
+    
+    <url>
+      <loc>http://kylerjohnston.com/tags/hannaford/index.html</loc>
+      <lastmod>2016-10-09</lastmod>
     </url>
     
     <url>
@@ -119,6 +129,11 @@
     <url>
       <loc>http://kylerjohnston.com/tags/writing/index.html</loc>
       <lastmod>2016-06-26</lastmod>
+    </url>
+    
+    <url>
+      <loc>http://kylerjohnston.com/wordtables/index.html</loc>
+      <lastmod>2016-10-09</lastmod>
     </url>
     
 </urlset>

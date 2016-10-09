@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Kyle R. Johnston - A story about shopping for groceries</title>
+    
+<meta name="description" content="">
+
+    <link rel="stylesheet" href="/pygments.css">
+    
+    <link rel="stylesheet" href="/static/gen/packed.css?0bd594b8">
+    
+    <link rel="icon" type="image/png" href="/static/img/favicons/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/static/img/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/static/img/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="alternate" href="kylerjohnston.com/blog/" hreflang="en-us">
+    
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header_left">
+          <a href="/blog/" class="name_nav">KYLE R. JOHNSTON</a>
+        </div>
+        <div class="header_right">
+          <ul class="nav">
+            <li class="nav"><a href="/blog/" class="nav" id="nav">Blog</a></li>
+            <li class="nav"><a href="/archive/" class="nav" id="nav">Archive</a></li>
+            <li class="nav"><a href="/about/" class="nav" id="nav">About</a></li>
+            <li class="nav"><a href="/" class="nav" id="nav">Portfolio</a></li>
+            <li class="nav"><a href="/recent.atom" class="atom" id="nav"><i class="fa fa-rss-square"></i></a></li>
+          </ul>
+        </div>
+        <div class="menu">
+          <ul class="nav">
+            <li class="nav"><a href="/blog/" class="nav" id="nav">Blog</a></li>
+            <li class="nav"><a href="/archive/" class="nav" id="nav">Archive</a></li>
+            <li class="nav"><a href="/about/" class="nav" id="nav">About</a></li>
+            <li class="nav"><a href="/" class="nav" id="nav">Portfolio</a></li>
+            <li class="nav"><a href="/recent.atom" class="nav" id="nav"><i class="fa fa-rss-square"></i> Atom Feed</a></li>
+          </ul>
+        </div>
+        <div class="menu-button">
+          <button id="menu-open"><i class="fa fa-bars"></i></button>
+          <button id="menu-close"><i class="fa fa-times"></i></button>
+        </div>
+      </div>
+      
+  <section>
+    <article>
+      <h1 class="heading">A story about shopping for groceries</h1>
+      <small class="heading">
+        9 October 2016
+        <ul class="tags">
+          
+            <li class="tags"><a class="tags" href="/tags/hannaford/">#hannaford</a></li>
+          
+        </ul>
+      </small>
+      <p>When I was growing up in the beatific suburbs of Connecticut, my mother would make weekly trips on Sunday to the Big Y and, occasionally, to Costco. Sometimes I would go with her. These were my introductions to grocery shopping. It rarely seemed to work well. My mother&rsquo;s work took her out of town three, sometimes four nights a week. Sundays she would cook dinner; the rest of the week my step-dad and I would eat leftovers, make frozen pizza, or go to Friendly&rsquo;s. When the next weekend came around, my mother would throw out all the rotten produce and moldy bread she&rsquo;d bought the prior week before heading out for another trip to the Big Y.</p>
+<p>It seemed wasteful. I was in high school when Michael Pollan&rsquo;s <em>Omnivore&rsquo;s Dilemma</em> and <em>In Defense of Food</em> came out. I didn&rsquo;t read them nor was I aware of them, as far as I remember, but I watched <em>Food Inc.</em> and Anthony Bourdain and started to really appreciate the importance of food. I wanted to learn cook. I found recipes on the internet and tutorials on YouTube and I would go to the grocery store&mdash;Stop N Shop now, because it was closer than Big Y&mdash;with lists of all the ingredients I needed to make a single a meal. I&rsquo;d come home and make much more than I could ever eat. I cooked based on recipes. I didn&rsquo;t know how to plan meals around the ingredients I already had, so the coconut milk or the half can of chopped tomatoes I bought would be spoiled by the time I ever wanted to use it again&mdash;<em>if</em> I ever wanted to use it again.</p>
+<p>My first semester of college I lived in a dorm and ate a lot of fast food and peanut butter sandwiches. After that semester I started commuting to school. I had a kitchen, and I drove by three grocery stores on the way to and from school. I was better at cooking by this point. I had meals I regularly cooked. I knew how to make things based on the ingredients I had on hand. But I was living alone, and I was a skinny kid (I still am). I wanted to cook with fresh produce, but fresh food spoils. If I went grocery shopping once a week, my produce would go bad before I could eat it all. So I started going to the grocery store every other day and buying just the produce and the protein I would need for the next day or two. It was a system that worked for me. The grocery store was on my way home, I was using fresh produce, and nothing was being wasted.</p>
+<p>Two and a half years ago my girlfriend moved in with me. My grocery shopping habits perplexed her. Why are you going to the grocery store, she would ask me, when you just went two days ago? She was from a once-a-week-shopper family. I kept shopping, but I wondered if, maybe, it wasn&rsquo;t the most efficient system. Maybe I go to the grocery store too much.</p>
+<h2>Figuring out how often I really go to the store</h2>
+<p>For a little over a year, I&rsquo;ve been keeping meticulous records of all of my spending which allows me to see exactly when, where, and how much I&rsquo;m spending on groceries.</p>
+<p><img alt="Figure 1. Grocery purchases, 17 July 2015&amp;ndash;7 October 2016." src="/static/img/posts/grocery_purchases.png" /></p>
+<p>I&rsquo;ve taken 167 grocery trips between 17 July 2015 and 7 October 2016. 167 trips in 448 days makes for a rough average of one grocery trip every 2.6826347 days, or about every 2 days, 16 hours, and 23 minutes. For a little more accuracy, I wrote a quick Python function to calculate the average number of days between trips.</p>
+<div class="codehilite"><pre><span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+
+<span class="k">def</span> <span class="nf">avg_day_difference</span><span class="p">(</span><span class="n">grocery_trips</span><span class="p">):</span>
+  <span class="c"># Make a list of just the dates of the grocery trips</span>
+  <span class="n">dates</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s">&#39;Date&#39;</span><span class="p">],</span> 
+    <span class="s">&#39;%m/</span><span class="si">%d</span><span class="s">/%Y&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">date</span><span class="p">(),</span> <span class="n">grocery_trips</span><span class="p">))</span>
+
+  <span class="c"># Sort it in reverse chronological order, most recent date first</span>
+  <span class="n">dates</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+  <span class="c"># Make a list of the time differences between each transaction</span>
+  <span class="n">day_differences</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">dates</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+      <span class="n">day_differences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">dates</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span>
+
+  <span class="c"># Return the mean</span>
+  <span class="k">return</span> <span class="nb">reduce</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">day_differences</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">day_differences</span><span class="p">)</span>
+</pre></div>
+
+
+<p>The slightly more accurate calculation shows I make a grocery trip, on average, every 2 days, 16 hours, and 46 minutes.</p>
+<p>Not all of these trips are necessarily for produce or food, though. In my budget, I categorize as &ldquo;grocery&rdquo; any spending on consumable household stuff. That includes food, but it also includes things like toilet paper and paper towels, cleaning supplies, and bathroom supplies like toothpaste, soap, shampoo, etc. I also include alcohol in my grocery budget. In the plot below, I&rsquo;ve included only conventional &ldquo;grocery stores.&rdquo;</p>
+<p><img alt="Figure 2. Purchases from grocery stores,  17 July 2015&amp;ndash;7 October 2016." src="/static/img/posts/grocery_store_purchases.png" /></p>
+<p>I&rsquo;ve gone on 158 trips to grocery stores, averaging 2 days, 20 hours, and 29 minutes between trips. So I go every two or three days. Which is about what I thought.</p>
+<h2>Is this too much?</h2>
+<p>According to the Food Marketing Institute, &ldquo;the trade association that serves as the voice of food retail,&rdquo; the average U.S. consumer made 1.6 trips to the supermarket per week in 2016.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1" rel="footnote">1</a></sup> So I&rsquo;m going to the store more than the average consumer. Is that a bad thing? I&rsquo;m not sure. It seems like it&rsquo;s working to me.</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a href="http://www.fmi.org/docs/default-source/webinars/fmi-2016-us-grocery-shopper-trends-overview-webinar5ce7030324aa67249237ff0000c12749.pdf?sfvrsn=2">&ldquo;U.S. Grocery Shopping Trends, 2016.&rdquo; Food Marketing Institute. Hartman Group. 2016.</a> (pdf link)&#160;<a class="footnote-backref" href="#fnref:1" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+    </article>
+    <article>
+      <div id="disqus_thread"></div>
+    </article>
+  </section>
+  <script>
+     var disqus_config = function () {
+       this.page.url = "http://kylerjohnston.com/posts/do-i-go-to-the-grocery-store-too-much/";
+       this.page.identifier = "do-i-go-to-the-grocery-store-too-much"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//kylerjohnston.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+
+      <footer>
+        <p class="footer">Built with <i class="fa fa-heart red"></i> using Python and Flask. <a href="http://github.com/kylerjohnston/another-static-flask-blog">View the source code on Github</a>.</p>
+        <p class="footer">All content copyright <i class="fa fa-copyright"></i> 2015&ndash;<span id="current-year"></span> Kyle Johnston and released under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="/static/gen/packed.js?3e5a9f68"></script>
+    
+    
+<script id="dsq-count-scr" src="//kylerjohnston.disqus.com/count.js" async></script>
+
+    <script async>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-70778406-1', 'auto');
+ga('send', 'pageview');
+
+    </script>
+  </body>
+</html>
