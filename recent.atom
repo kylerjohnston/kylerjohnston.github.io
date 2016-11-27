@@ -123,21 +123,6 @@
 &lt;p&gt;Based on this I think I&amp;rsquo;m going to reserve the 16 ft.-truck. It is going to be a little more cumbersome to drive and use a bit more fuel, but it will be easier to load and I won&amp;rsquo;t have to stack things as much and risk things falling in transit.&lt;/p&gt;</content>
   </entry>
   <entry xml:base="http://kylerjohnston.com/recent.atom">
-    <title type="text">Introducing: Today I Read</title>
-    <id>http://kylerjohnston.com/posts/introducing-todayiread/</id>
-    <updated>2016-02-29T00:00:00Z</updated>
-    <published>2016-02-29T00:00:00Z</published>
-    <link href="http://kylerjohnston.com/posts/introducing-todayiread/" />
-    <author>
-      <name>Kyle Johnston</name>
-    </author>
-    <content type="html">&lt;p&gt;Yesterday I launched &lt;a href=&quot;https://todayiread.xyz&quot;&gt;todayiread.xyz&lt;/a&gt;. Today I Read&amp;hellip; is a lightweight app designed to help users keep track of what they&amp;rsquo;re reading and visualize their reading habits.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;ve been working on Today I Read&amp;hellip; over the past two weekends. I used to use Goodreads when I was in college, but I&amp;rsquo;ve found that Goodreads doesn&amp;rsquo;t really work well with the kinds of reading I do in grad school. I don&amp;rsquo;t read many books: I read lots of chapters and journal articles, and I want a way to keep track of those. I also want a way to visualize my reading habits&amp;mdash;reading is basically my job right now, and I want to make sure I&amp;rsquo;m keeping up with it. Plus, charts look cool.&lt;/p&gt;
-&lt;p&gt;&lt;img alt=&quot;Today I Read screenshot&quot; src=&quot;/static/img/project-screenshots/todayiread-screenshot-home.png&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;I made Today I Read&amp;hellip; to solve these problems. Check it out! Maybe you&amp;rsquo;ll find it helpful too. It&amp;rsquo;s a little rough around the edges now&amp;mdash;like I said, I hacked it over basically four days&amp;mdash;but it&amp;rsquo;s functional, and I&amp;rsquo;m going to be working on improving it more over the next few weeks. You can &lt;a href=&quot;http://github.com/kylerjohnston/todayiread&quot;&gt;view the source code on Github&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can also access your reading data in JSON format via Today I Read&amp;hellip;&amp;rsquo;s API, so I&amp;rsquo;ll be writing a post analyzing my reading habits some time in the future&amp;hellip;&lt;/p&gt;</content>
-  </entry>
-  <entry xml:base="http://kylerjohnston.com/recent.atom">
     <title type="text">The pleasure of the TXT: Writing in plain text in the humanities</title>
     <id>http://kylerjohnston.com/posts/the-pleasure-of-the-txt/</id>
     <updated>2016-02-16T00:00:00Z</updated>
